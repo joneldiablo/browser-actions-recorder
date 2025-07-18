@@ -79,11 +79,24 @@ git push origin --all
 git tag -a "$new_version" -m "$new_version"
 git push origin "$new_version"
 
-# Publish on chrome store
-if [ -n "$OTP" ]; then
-  #TODO: si la chrome store admite usar un OTP acá publicar con OTP
+# Publish to the Chrome Web Store when the required environment variables are set
+if [ -n "$CHROME_EXTENSION_ID" ] && [ -n "$CHROME_CLIENT_ID" ] && [ -n "$CHROME_CLIENT_SECRET" ] && [ -n "$CHROME_REFRESH_TOKEN" ]; then
+  if [ -n "$OTP" ]; then
+    npx chrome-webstore-upload upload --auto-publish \
+      --extension-id "$CHROME_EXTENSION_ID" \
+      --client-id "$CHROME_CLIENT_ID" \
+      --client-secret "$CHROME_CLIENT_SECRET" \
+      --refresh-token "$CHROME_REFRESH_TOKEN" \
+      --auth-code "$OTP"
+  else
+    npx chrome-webstore-upload upload --auto-publish \
+      --extension-id "$CHROME_EXTENSION_ID" \
+      --client-id "$CHROME_CLIENT_ID" \
+      --client-secret "$CHROME_CLIENT_SECRET" \
+      --refresh-token "$CHROME_REFRESH_TOKEN"
+  fi
 else
-  #TODO: publicar a directamente
+  echo "Chrome Web Store environment variables are not set. Skipping publish step."
 fi
 
 # Switch back to the previous branch

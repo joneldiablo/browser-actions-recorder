@@ -1,7 +1,7 @@
 {
   "name": "browser-actions-recorder",
   "version": "1.0.0-dev",
-  "description": "TODO: replace this by a real description",
+  "description": "Utility scripts for building and publishing the browser actions recorder",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
@@ -53,6 +53,9 @@
     "url": "https://github.com/joneldiablo/browser-actions-recorder.git"
   },
   "keywords": [
-    "#TODO: add real keywords"
+    "browser",
+    "actions",
+    "recorder",
+    "automation"
   ]
 }
