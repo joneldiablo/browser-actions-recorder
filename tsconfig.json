@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "types": [
+      "jest",
+      "node"
+    ],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "nodenext",
+    "module": "NodeNext",
+    "target": "ES6",
+    "lib": [
+      "es2019",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "outDir": "./dist/cjs"
+  },
+  "exclude": [
+    "node_modules",
+  ],
+  "typeAcquisition": {
+    "include": [
+      "jest",
+      "node"
+    ]
+  }
+}
