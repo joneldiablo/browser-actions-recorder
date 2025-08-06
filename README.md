@@ -1,6 +1,24 @@
 # Browser Actions Recorder
 
-This repository contains utility scripts and build configuration for a future browser action recorder library.
+This project provides scripts and a small library for capturing user interactions in a browser environment.
+
+## Usage
+
+Install the package and initialize the recorder:
+
+```bash
+npm install browser-actions-recorder
+```
+
+```ts
+import { ActionRecorder } from 'browser-actions-recorder';
+
+const recorder = new ActionRecorder();
+recorder.start();
+// user performs actions
+recorder.stop();
+console.log(recorder.getActions());
+```
 
 ## Development
 
@@ -13,5 +31,3 @@ Tests are executed with Jest:
 ```bash
 npm test
 ```
-
-Currently no production code exists yet; the included tests cover the build utilities.
