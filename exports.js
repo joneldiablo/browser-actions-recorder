@@ -1,4 +1,8 @@
 #!/usr/bin/env node
+/**
+ * Utility script that generates the `exports` field in `package.json` based on
+ * compiled files under the `dist` directory.
+ */
 const fs = require('fs');
 const path = require('path');
 
